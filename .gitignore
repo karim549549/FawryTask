@@ -1,0 +1,13 @@
+
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+Thumbs.db
+*.DS_Store
+
+*.exe
+*.dll
+*.pdb
