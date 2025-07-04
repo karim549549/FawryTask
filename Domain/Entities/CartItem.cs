@@ -15,6 +15,8 @@ namespace fawryTask.Domain.Entities
         public CartItem(Product product, int quantity)
         {
             Product = product;
+            if (quantity <= 0)
+                throw new ArgumentException("Quantity must be greater than zero.");
             Quantity = quantity;
         }
 

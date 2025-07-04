@@ -1,17 +1,12 @@
 ﻿using fawryTask.Domain.Entities;
 using fawryTask.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace fawryTask.Services
 {
-    public class CheckoutService
+    public class CheckoutService : ICheckoutService
     {
         private readonly ShippingService _shippingService;
-
+         
         public CheckoutService()
         {
             _shippingService = new ShippingService();

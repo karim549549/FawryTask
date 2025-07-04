@@ -11,6 +11,8 @@ public abstract class Product
     protected Product(string name, double price, int quantity)
     {
         Name = name;
+        if(price < 0) 
+            throw  new ArgumentOutOfRangeException("Price cannot be negative.");
         Price = price;
         _quantity = quantity;
     }
@@ -34,7 +36,7 @@ public abstract class Product
     {
         lock (_lock)
         {
-            if (_quantity < requestedQty)
+            if (!IsAvailable(requestedQty))
                 return false;
 
             _quantity -= requestedQty;
